@@ -115,7 +115,7 @@ h6 span {
   background-image: url("src/backgroudPattern.svg"); /* imagem */
   background-position: bottom center;
   background-repeat: no-repeat;
-  background-size: 300%;
+  background-size: 250%;
   position: absolute;
   border-radius: 6px;
   left: 0;
