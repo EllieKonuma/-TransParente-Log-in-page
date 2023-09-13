@@ -1,9 +1,9 @@
-import { createAccount } from "./controller/accountController.js";
-import { Account } from "./Account.js";
+import { createAccount } from "../controller/accountController.js";
+import { Account } from "../Account.js";
 
-export const btn = document.querySelector("#sendSignUp");
+export const buttonSingUp = document.querySelector("#sendSignUp");
 
-btn.addEventListener("click", function (e) {
+buttonSingUp.addEventListener("click", function (e) {
   e.preventDefault();
   const signUpName = document.querySelector("#signUpName");
   const signUpEmail = document.querySelector("#signUpEmail");

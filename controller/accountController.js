@@ -14,4 +14,9 @@ const createAccount = async (acc) => {
   return await response.json();
 };
 
-export { createAccount };
+const getAccounts = async () => {
+  const response = await fetch(accountUrl);
+  return await response.json();
+};
+
+export { createAccount, getAccounts };
