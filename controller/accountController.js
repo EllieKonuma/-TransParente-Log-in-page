@@ -19,4 +19,20 @@ const getAccounts = async () => {
   return await response.json();
 };
 
+// const logIn = async (acc) => {
+//   fetch(accountUrl, {
+//     method: "POST",
+//     headers: {
+//       "Content-type": "application/json; charset=UTF-8",
+//     },
+//     body: JSON.stringify(acc),
+//   })
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .then((data) => {
+//       console.log(data);
+//     });
+// };
+
 export { createAccount, getAccounts };
