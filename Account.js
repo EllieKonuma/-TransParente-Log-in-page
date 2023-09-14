@@ -3,6 +3,7 @@ export class Account {
   email; // privado
   password; // privado
   static accounts = [];
+  author = false;
   constructor(name, email, password) {
     this.name = name;
     this.email = email;
@@ -13,5 +14,8 @@ export class Account {
 
   #pushAcc() {
     Account.accounts.push(this);
+  }
+  becomeAuthor(response) {
+    this.author = true;
   }
 }

@@ -1,0 +1,14 @@
+{
+  "name": "projectfinale",
+  "version": "1.0.0",
+  "description": "transparente log in and sing up",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Yuka",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
