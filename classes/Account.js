@@ -5,13 +5,12 @@ import {
 } from "../controller/accountControllers.js";
 import { createAuthor } from "../controller/authorControllers.js";
 
-updateAccount();
-
 export class Account {
   name;
   email; // privado
   password; // privado
   author = false;
+  id;
   authorId = null;
   constructor({ name, email, password, author, id, authorId }) {
     this.name = name;
@@ -30,8 +29,7 @@ export class Account {
       }
       this.author = true;
       this.authorId = author.id;
-      const idAcc = getLocalAccount();
-      updateAccount(this, idAcc.id);
+      updateAccount(this, this.id);
       upsertLocalAccount(this);
 
       return console.log("Now you are an Author!");

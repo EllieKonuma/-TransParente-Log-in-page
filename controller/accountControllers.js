@@ -31,7 +31,7 @@ const getAccountByEmail = async (email) => {
   return account;
 };
 
-const updateAccount = async (acc) => {
+const updateAccount = async (acc, id) => {
   const response = await fetch(accountUrl + "/" + id, {
     method: "PUT",
     headers: {
