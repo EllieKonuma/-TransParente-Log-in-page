@@ -1,4 +1,5 @@
 import {
+  getLocalAccount,
   updateAccount,
   upsertLocalAccount,
 } from "../controller/accountControllers.js";
@@ -27,11 +28,10 @@ export class Account {
       if (author == null) {
         throw Error("couldnlt create author for account, try again later");
       }
-
       this.author = true;
       this.authorId = author.id;
-
-      updateAccount(this);
+      const idAcc = getLocalAccount();
+      updateAccount(this, idAcc.id);
       upsertLocalAccount(this);
 
       return console.log("Now you are an Author!");

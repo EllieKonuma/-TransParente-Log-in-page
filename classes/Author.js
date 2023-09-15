@@ -1,5 +1,5 @@
-import { createPost } from "../controller/postController";
-import { Post } from "./Post";
+import { createPost } from "../controller/postController.js";
+import { Post } from "./Post.js";
 
 export class Author {
   name;

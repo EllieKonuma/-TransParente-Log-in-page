@@ -31,20 +31,15 @@ const getAccountByEmail = async (email) => {
   return account;
 };
 
-const updateAccount = async (acc, id) => {
-  fetch(accountUrl + `/${id}`, {
+const updateAccount = async (acc) => {
+  const response = await fetch(accountUrl + "/" + id, {
     method: "PUT",
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
     body: JSON.stringify(acc),
-  })
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data);
-    });
+  });
+  return await response.json();
 };
 
 const getLocalAccount = () => {
