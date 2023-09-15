@@ -1,5 +1,8 @@
 import { Account } from "../classes/Account.js";
-import { getAccountByEmail } from "../controller/accountController.js";
+import {
+  getAccountByEmail,
+  upsertLocalAccount,
+} from "../controller/accountControllers.js";
 
 export const buttonLogIn = document.querySelector("#sendLogIn");
 
@@ -20,7 +23,7 @@ buttonLogIn.addEventListener("click", async function (e) {
   const account = new Account(resposeAcc);
 
   if (account.verifyPassword(logInPass.value)) {
-    localStorage.setItem("account", JSON.stringify(account)); // por enquanto
+    upsertLocalAccount(account);
     window.location = "pages/posts.html";
   }
 });

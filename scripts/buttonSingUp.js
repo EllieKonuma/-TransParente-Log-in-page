@@ -1,4 +1,7 @@
-import { createAccount } from "../controller/accountController.js";
+import {
+  createAccount,
+  upsertLocalAccount,
+} from "../controller/accountControllers.js";
 import { Account } from "../classes/Account.js";
 
 export const buttonSingUp = document.querySelector("#sendSignUp");
@@ -29,8 +32,7 @@ buttonSingUp.addEventListener("click", async function (e) {
 
   if (newAcc.id != null) {
     const account = new Account(newAcc);
-    window.localStorage.setItem("account", JSON.stringify(account)); // por enquanto
-
+    upsertLocalAccount(account);
     window.location = "pages/posts.html";
   } else {
     alert("Fail to create account, please try again later.");

@@ -10,6 +10,7 @@ const createAccount = async (name, email, password) => {
       email: email,
       password: password,
       author: false,
+      authorId: null,
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
@@ -46,4 +47,30 @@ const updateAccount = async (acc, id) => {
     });
 };
 
-export { createAccount, getAccounts, updateAccount, getAccountByEmail };
+const getLocalAccount = () => {
+  const account = localStorage.getItem("account");
+
+  if (account == null) {
+    return null;
+  }
+
+  return JSON.parse(account);
+};
+
+const upsertLocalAccount = (account) => {
+  localStorage.setItem("account", JSON.stringify(account));
+};
+
+const removeLocalAccount = () => {
+  localStorage.removeItem("account");
+};
+
+export {
+  createAccount,
+  getAccounts,
+  getAccountByEmail,
+  updateAccount,
+  upsertLocalAccount,
+  getLocalAccount,
+  removeLocalAccount,
+};
