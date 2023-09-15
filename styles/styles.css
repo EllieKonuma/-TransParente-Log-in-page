@@ -74,7 +74,7 @@ h6 span {
   color: #e0b1cb;
   background-color: #5e548e;
   font-family: "unicons";
-  content: url("src/arrow.svg"); /* icon */
+  content: url("../src/arrow.svg"); /* icon */
   z-index: 20;
   top: -10px;
   left: -10px;
@@ -112,7 +112,7 @@ h6 span {
   width: 100%;
   height: 100%;
   background-color: #5e548e;
-  background-image: url("src/backgroudPattern.svg"); /* imagem */
+  background-image: url("../src/backgroudPattern.svg"); /* imagem */
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: 250%;
@@ -427,15 +427,15 @@ h4 {
 }
 
 .uil-at:before {
-  content: url("src/email.svg"); /* icon */
+  content: url("../src/email.svg"); /* icon */
 }
 
 .uil-lock-alt:before {
-  content: url("src/lock.svg"); /* icon */
+  content: url("../src/lock.svg"); /* icon */
 }
 
 .uil-user:before {
-  content: url("src/people.svg");
+  content: url("../src/people.svg");
 }
 
 [class^="uil-"]:before,

@@ -1,11 +1,16 @@
 import { baseApiUrl } from "./api.js";
 
-const accountUrl = baseApiUrl + "account";
+const accountUrl = baseApiUrl + "accounts";
 
-const createAccount = async (acc) => {
+const createAccount = async (name, email, password) => {
   const response = await fetch(accountUrl, {
     method: "POST",
-    body: JSON.stringify(acc),
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      password: password,
+      author: false,
+    }),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
     },
@@ -19,20 +24,26 @@ const getAccounts = async () => {
   return await response.json();
 };
 
-// const logIn = async (acc) => {
-//   fetch(accountUrl, {
-//     method: "POST",
-//     headers: {
-//       "Content-type": "application/json; charset=UTF-8",
-//     },
-//     body: JSON.stringify(acc),
-//   })
-//     .then((response) => {
-//       return response.json();
-//     })
-//     .then((data) => {
-//       console.log(data);
-//     });
-// };
+const getAccountByEmail = async (email) => {
+  const accounts = await getAccounts();
+  const account = accounts.filter((acc) => acc.email === email)[0];
+  return account;
+};
 
-export { createAccount, getAccounts };
+const updateAccount = async (acc, id) => {
+  fetch(accountUrl + `/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+    body: JSON.stringify(acc),
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    });
+};
+
+export { createAccount, getAccounts, updateAccount, getAccountByEmail };
