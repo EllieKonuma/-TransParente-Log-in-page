@@ -1,4 +1,4 @@
-# Transparent⚧️
+# TransParente⚧️
 <p>Nosso propósito é criar um hub informativo seguro, onde as pessoas trans possam encontrar informações confiáveis. 
   Para alcançar isso, dedicamos nossa equipe à curadoria cuidadosa, dissipando qualquer confusão que possa cercar 
   nossos direitos e apresentando essas informações de forma transparente e acessível.</p>
