@@ -1,11 +1,10 @@
 import {
-  getLocalAccount,
   updateAccount,
   upsertLocalAccount,
 } from "../controller/accountControllers.js";
 import { createAuthor } from "../controller/authorControllers.js";
 
-export class Account {
+class Account {
   name;
   email; // privado
   password; // privado
@@ -25,7 +24,7 @@ export class Account {
     if (response === "yes") {
       const author = await createAuthor(this.name);
       if (author == null) {
-        throw Error("couldnlt create author for account, try again later");
+        throw Error("Could not create author for account, try again later.");
       }
       this.author = true;
       this.authorId = author.id;
@@ -45,12 +44,19 @@ export class Account {
       alert("Password Invalid!");
       throw new Error("Password Invalid!");
     } else {
-      console.log("Aprovado");
+      console.log("Approved");
       return true;
     }
   }
 
   hey() {
     alert(`Hey, ${this.name}!!!`);
+    return console.log(`Hey, ${this.name}!!!`);
   }
 }
+
+if (typeof module === "object") {
+  module.exports = { Account };
+}
+
+export { Account };
