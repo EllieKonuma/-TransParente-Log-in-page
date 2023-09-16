@@ -1,6 +1,5 @@
 const { expect, test, beforeEach } = require("@jest/globals");
-const { Account } = require("../Account.js");
-// import { Account } from "../Account.js";
+const Account = require("../Account.js");
 
 const yukaAcc = null;
 beforeEach(() => {

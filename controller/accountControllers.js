@@ -60,19 +60,7 @@ const removeLocalAccount = () => {
   localStorage.removeItem("account");
 };
 
-if (typeof module === "object") {
-  module.exports = {
-    createAccount,
-    getAccounts,
-    getAccountByEmail,
-    updateAccount,
-    upsertLocalAccount,
-    getLocalAccount,
-    removeLocalAccount,
-  };
-}
-
-export {
+module.exports = {
   createAccount,
   getAccounts,
   getAccountByEmail,

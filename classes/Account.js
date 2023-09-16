@@ -55,8 +55,4 @@ class Account {
   }
 }
 
-if (typeof module === "object") {
-  module.exports = { Account };
-}
-
-export { Account };
+module.exports = { Account };
