@@ -7,7 +7,7 @@
 ```js
   npm install  
 ```
-<p>Eu usei tambem a extenção Live Sever para a produção.</p>
+<p>Eu usei tambem a extenção Live Sever no VScode para a produção.</p>
 
 
 
